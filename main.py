@@ -39,8 +39,7 @@ def main():
         </style>
         """, unsafe_allow_html=True)
     
-    st.title("🌍 === World Historian Agent === 🌍")
-
+    st.title("🌍 World Historian Agent 🌍")
 
     question = st.text_area("What History do you want to know:", "Tell me a common world truth")
     st.write(f"**Your Question:** {question}")
@@ -69,8 +68,10 @@ def main():
     """)
 
     results_str = str(results)
+        
     runner = file_writer_tool._run(filename='example.txt', content=results_str, directory='./note', overwrite=True)
     print(runner)
+    
     st.success("Results saved successfully!")
     st.balloons()
 
